@@ -1,6 +1,5 @@
 import {dbConnect} from "./dbConfig";
 import cors from '@fastify/cors';
-import {socketAuthentication} from "./socketMiddlewares";
 
 const dotenv = require("dotenv");
 dotenv.config();
@@ -56,7 +55,6 @@ async function main() {
 
     await dbConnect(dbUrl);
     await startServer()
-    socketAuthentication(io);
 }
 
 
